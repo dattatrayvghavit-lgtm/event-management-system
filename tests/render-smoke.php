@@ -22,6 +22,7 @@ foreach(['events','login','signup'] as $page) {
     ob_start(); require __DIR__.'/../app/layout.php'; $html=ob_get_clean();
     if(!str_contains($html,'</html>') || !str_contains($html,'College of Computer Science and Information Technology, Latur.')) throw new RuntimeException("Incomplete $page view");
     if(!str_contains($html,'Campus Connect') || str_contains($html,'Campus Events')) throw new RuntimeException("Branding failed for $page view");
+    if(!str_contains($html,'src="assets/campus-connect-logo.svg" alt="" aria-hidden="true"')) throw new RuntimeException("Accessible brand logo missing for $page view");
     if(!str_contains($html,'<title>Campus Connect · ')) throw new RuntimeException("Page title branding failed for $page view");
     if(str_contains($html,'<small>CCSIT · LATUR</small>')) throw new RuntimeException("Navbar subtitle remains on $page view");
     if(!str_contains($html,'assets/branding.css')) throw new RuntimeException("Brand stylesheet missing for $page view");
