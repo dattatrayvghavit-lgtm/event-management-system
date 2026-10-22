@@ -1,0 +1,4 @@
+config.php
+.env
+.git
+tests/results.txt
