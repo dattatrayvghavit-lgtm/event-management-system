@@ -20,7 +20,12 @@ function query(string $sql,array $params=[]): FixtureStatement { return new Fixt
 foreach(['events','login','signup'] as $page) {
     ob_start(); require __DIR__.'/../app/views.php'; $content=ob_get_clean();
     ob_start(); require __DIR__.'/../app/layout.php'; $html=ob_get_clean();
-    if(!str_contains($html,'</html>') || !str_contains($html,'CCSIT')) throw new RuntimeException("Incomplete $page view");
+    if(!str_contains($html,'</html>') || !str_contains($html,'College of Computer Science and Information Technology, Latur.')) throw new RuntimeException("Incomplete $page view");
+    if(!str_contains($html,'Campus Connect') || str_contains($html,'Campus Events')) throw new RuntimeException("Branding failed for $page view");
+    if(!str_contains($html,'<title>Campus Connect · ')) throw new RuntimeException("Page title branding failed for $page view");
+    if(str_contains($html,'<small>CCSIT · LATUR</small>')) throw new RuntimeException("Navbar subtitle remains on $page view");
+    if(!str_contains($html,'assets/branding.css')) throw new RuntimeException("Brand stylesheet missing for $page view");
+    if($page==='login' && !str_contains($html,'New to Campus Connect?')) throw new RuntimeException('Login brand prompt missing');
     if($page==='events' && substr_count($html,'class="event-card"')!==3) throw new RuntimeException('Event card rendering failed');
     if($page!=='events' && !str_contains($html,'name="csrf"')) throw new RuntimeException('Auth form missing CSRF');
     if(isset($argv[1]) && $page==='events') file_put_contents($argv[1],$html);

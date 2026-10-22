@@ -1,0 +1,90 @@
+:root {
+  --ink: #172b45;
+  --muted: #5d6d80;
+  --green: #2457a7;
+  --lime: #dceafe;
+  --paper: #f5f8fc;
+  --line: #dbe5f1;
+  --white: #fff;
+}
+
+.button:hover {
+  background: #1b447f;
+}
+
+.button.secondary {
+  border-color: #a8bfdf;
+}
+
+.hero {
+  background: #e8f1fc;
+}
+
+.hero p {
+  color: #4c6079;
+}
+
+.hero-meta {
+  color: #50647d;
+}
+
+.hero-meta span {
+  border-color: #b8c9df;
+}
+
+.orbit {
+  border-color: #b4c8e3;
+}
+
+.art-ticket {
+  color: #e2efff;
+  box-shadow: 14px 18px 0 #cbdcf2;
+}
+
+.art-ticket > div {
+  border-color: #7898c0;
+}
+
+input,
+select,
+textarea {
+  border-color: #c3d0e2;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline-color: #3b82d0;
+}
+
+.event-art {
+  background: #dceafe;
+  color: #315f9f;
+}
+
+.event-art.seminar {
+  background: #dceafe;
+  color: #315f9f;
+}
+
+.auth-decoration {
+  color: #5b83bb;
+}
+
+.art-star {
+  color: #557eb9;
+}
+
+.empty {
+  border-color: #b8c9df;
+}
+
+th {
+  background: #e7eff9;
+  color: #405875;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #3b82d0;
+}

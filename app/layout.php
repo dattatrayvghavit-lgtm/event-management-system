@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><?=e($title??'Campus Events')?> · CCSIT Latur</title><link rel="stylesheet" href="assets/style.css"><script defer src="assets/app.js"></script></head>
-<body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="index.php"><span class="brand-mark">C.</span><span>Campus<span class="brand-light">Events</span><small>CCSIT · LATUR</small></span></a><nav aria-label="Main navigation">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus Connect · <?=e($title??'Discover events')?></title><link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/branding.css"><script defer src="assets/app.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="index.php"><span class="brand-mark">C.</span><span>Campus<span class="brand-light"> Connect</span></span></a><nav aria-label="Main navigation">
 <a class="<?=$page==='events'?'active':''?>" href="index.php">Discover</a>
 <?php if(user()): ?>
 <?php if(user()['role']==='admin'): ?><a class="<?=in_array($page,['admin','edit','attendees','students'])?'active':''?>" href="index.php?page=admin">Dashboard</a><a class="<?=$page==='reports'?'active':''?>" href="index.php?page=reports">Reports</a>
